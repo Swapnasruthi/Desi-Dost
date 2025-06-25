@@ -1,0 +1,78 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 270 60% 99%;
+    --foreground: 270 10% 20%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 270 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 10% 20%;
+
+    --primary: 270 80% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 20% 95%;
+    --secondary-foreground: 270 10% 30%;
+
+    --muted: 270 20% 96%;
+    --muted-foreground: 270 10% 45%;
+
+    --accent: 270 80% 97%;
+    --accent-foreground: 270 80% 65%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 270 20% 90%;
+    --input: 270 20% 94%;
+    --ring: 270 80% 60%;
+    
+    --radius: 0.8rem;
+  }
+
+  .dark {
+    /* Keeping dark theme variables for completeness, but app will default to light */
+    --background: 225 10% 12%;
+    --foreground: 220 15% 88%;
+    --card: 225 10% 16%;
+    --card-foreground: 220 15% 88%;
+    --popover: 225 10% 10%;
+    --popover-foreground: 220 15% 88%;
+    --primary: 270 80% 70%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 225 10% 25%;
+    --secondary-foreground: 220 15% 75%;
+    --muted: 225 10% 20%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 270 80% 65%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 225 10% 22%;
+    --input: 225 10% 18%;
+    --ring: 270 80% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background: radial-gradient(circle at 50% 0%, hsl(0 0% 100%) 0%, hsl(var(--background)) 80%);
+  }
+  input[type="file"] {
+    @apply file:text-foreground;
+  }
+}
